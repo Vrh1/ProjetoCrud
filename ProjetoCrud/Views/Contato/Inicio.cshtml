@@ -1,0 +1,48 @@
+﻿@model List<ProjetoCrud.Models.Contato>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top: 30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Lista de contato</h4>
+            </div>
+            <div class="panel-body">
+                    <a class="btn btn-success">Criar novo</a>
+                    <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th style="width:150px"></th>
+                        </thead>
+                        <tbody>
+                            @foreach (ProjetoCrud.Models.Contato item in Model) 
+                            { 
+                                <tr>
+                                    <td>@item.Nomes</td>
+                                    <td>@item.SobreNome</td>
+                                    <td>@item.Telefone</td>
+                                    <td>@item.Email</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm">Editar</a>
+                                        <a class="btn btn-danger btn-sm">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
